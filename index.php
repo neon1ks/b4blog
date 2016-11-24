@@ -171,25 +171,26 @@ else
 					</div>
 				</header>
 			</div>
-
-
-		<div class="header-search pull-right">
-			<jdoc:include type="modules" name="position-0" style="none" />
 		</div>
-			<?php if ($this->countModules('position-1')) : ?>
-				<nav class="navigation" role="navigation">
-					<div class="navbar pull-left">
-						<a class="btn btn-navbar collapsed" data-toggle="collapse" data-target=".nav-collapse">
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-						</a>
-					</div>
-					<div class="nav-collapse">
-						<jdoc:include type="modules" name="position-1" style="none" />
-					</div>
-				</nav>
-			<?php endif; ?>
+
+
+		<?php if ($this->countModules('position-1')) : ?>
+		<nav class="navbar navbar-light bg-faded">
+			<div class="container">
+				<button class="navbar-toggler hidden-md-up" type="button" data-toggle="collapse"
+					data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+				</button>
+				<div class="collapse navbar-toggleable-sm" id="navbarResponsive">
+					<jdoc:include type="modules" name="position-1" style="none" />
+					<?php if ($this->countModules('position-0')) : ?>
+						<jdoc:include type="modules" name="position-0" style="none" />
+					<?php endif; ?>
+				</div>
+			</div>
+		</nav>
+		<?php endif; ?>
+
+		<div class="container">
 			<jdoc:include type="modules" name="banner" style="xhtml" />
 			<div class="row-fluid">
 				<?php if ($this->countModules('position-8')) : ?>
