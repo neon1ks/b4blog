@@ -58,7 +58,6 @@ if ($this->params->get('templateColor'))
 {
 	$doc->addStyleDeclaration("
 	body.site {
-		border-top: 3px solid " . $this->params->get('templateColor') . ";
 		background-color: " . $this->params->get('templateBackgroundColor') . ";
 	}
 	a {
