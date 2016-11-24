@@ -123,7 +123,7 @@ if ($this->params->get('sitedescription'))
 }
 else
 {
-	$siteDescription = '<div class="site-description">Статьи про ОС Ubuntu. Языки программирования Си&nbsp;и&nbsp;C++<br>Инструменты разработки и многое другое.</div>';
+	$siteDescription = '<div class="site-description">Статьи про Ubuntu. Языки программирования Си&nbsp;и&nbsp;C++<br>Инструменты разработки и многое другое.</div>';
 }
 
 
