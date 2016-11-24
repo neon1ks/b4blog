@@ -1,6 +1,10 @@
+.body {
+	margin-top: 1rem;
+}
 .navbar {
 	border-radius: 0;
 	margin-bottom: 2rem;
+	margin-top: 1rem;
 }
 .site-name {
 	margin-top: 15px;
