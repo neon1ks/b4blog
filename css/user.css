@@ -39,7 +39,7 @@ ul.inline > li, ol.inline > li {
 
 .form-signin {
   max-width: 330px;
-  padding: 15px;
+  padding: 0 15px 0 15px;
   margin: 0 auto;
 }
 
@@ -72,3 +72,19 @@ ul.inline > li, ol.inline > li {
   border-top-right-radius: 0;
 }
 
+.footer {
+	padding: 2rem 0;
+}
+
+ul.mostread {
+	padding: 0 0 0 15px;
+	margin: 0 0 0.5rem 1.2rem;
+}
+
+.well .page-header {
+	padding-left: 15px;
+	padding-bottom: 0.5rem;
+}
+.well {
+	margin-bottom: 2rem;
+}
