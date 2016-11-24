@@ -155,7 +155,7 @@ else
 							</div>
 							<div class="col-xl-9 col-lg-9 col-md-9 col-sm-12 col-xs-12">
 								<a class="brand pull-left" href="<?php echo $this->baseurl; ?>/">
-									<p class="h1"><?php echo $siteTitle; ?> <sup class="tag tag-warning" style="font-size: 1rem; top: -1rem;">В разработке</sup></p>
+									<p class="h1 site-name"><?php echo $siteTitle; ?> <sup class="tag tag-warning" style="font-size: 1rem; top: -1rem;">В разработке</sup></p>
 								</a>
 								<?php echo $siteDescription; ?>
 							</div>

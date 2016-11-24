@@ -1,3 +1,10 @@
+.navbar {
+	border-radius: 0;
+	margin-bottom: 2rem;
+}
+.site-name {
+	margin-top: 1.25rem;
+}
 .breadcrumb-label {
 	float: left;
 }
@@ -9,4 +16,23 @@
 }
 .blog-inner {
 	margin: auto auto;
+}
+.readmore {
+	text-align: right;
+}
+ul.inline > li, ol.inline > li {
+	display: inline-block;
+	padding-left: 0;
+	padding-right: 5px;
+}
+.tags {
+	padding-left: 0;
+}
+.article-info {
+	font-size: 90%;
+}
+
+.article-info dd {
+	margin-bottom: 0;
+	margin-left: 0;
 }
