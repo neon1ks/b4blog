@@ -85,21 +85,13 @@ if (file_exists($userCss) && filesize($userCss) > 0)
 }
 
 // Adjusting content width
-if ($this->countModules('position-7') && $this->countModules('position-8'))
+if ($this->countModules('position-7'))
 {
-	$span = "span6";
-}
-elseif ($this->countModules('position-7') && !$this->countModules('position-8'))
-{
-	$span = "span9";
-}
-elseif (!$this->countModules('position-7') && $this->countModules('position-8'))
-{
-	$span = "span9";
+	$classMainWidth = 'col-xl-9 col-lg-9';
 }
 else
 {
-	$span = "span12";
+	$classMainWidth = 'col-xl-12 col-lg-12';
 }
 
 // Logo img file
@@ -190,28 +182,24 @@ else
 		</nav>
 		<?php endif; ?>
 
-		<div class="container">
-			<jdoc:include type="modules" name="banner" style="xhtml" />
-			<div class="row-fluid">
-				<?php if ($this->countModules('position-8')) : ?>
-					<!-- Begin Sidebar -->
-					<div id="sidebar" class="span3">
-						<div class="sidebar-nav">
-							<jdoc:include type="modules" name="position-8" style="xhtml" />
-						</div>
-					</div>
-					<!-- End Sidebar -->
-				<?php endif; ?>
-				<main id="content" role="main" class="<?php echo $span; ?>">
-					<!-- Begin Content -->
-					<jdoc:include type="modules" name="position-3" style="xhtml" />
-					<jdoc:include type="message" />
-					<jdoc:include type="component" />
-					<jdoc:include type="modules" name="position-2" style="none" />
-					<!-- End Content -->
-				</main>
+		<div class="container md-center">
+			<div class="row">
+				<jdoc:include type="modules" name="banner" style="xhtml" />
+			</div>
+			<div class="row">
+		
+				<div class="<?php echo $classMainWidth; ?>">
+					<main id="content" role="main" class="<?php echo $span; ?>">
+						<!-- Begin Content -->
+						<jdoc:include type="modules" name="position-3" style="xhtml" />
+						<jdoc:include type="message" />
+						<jdoc:include type="component" />
+						<jdoc:include type="modules" name="position-2" style="none" />
+						<!-- End Content -->
+					</main>
+				</div>
 				<?php if ($this->countModules('position-7')) : ?>
-					<div id="aside" class="span3">
+					<div class="col-xl-3 col-lg-3">
 						<!-- Begin Right Sidebar -->
 						<jdoc:include type="modules" name="position-7" style="well" />
 						<!-- End Right Sidebar -->
@@ -220,6 +208,8 @@ else
 			</div>
 		</div>
 	</div>
+
+
 	<!-- Footer -->
 	<footer class="footer" role="contentinfo">
 		<div class="container">
