@@ -102,19 +102,37 @@ else
 	$span = "span12";
 }
 
-// Logo file or site title param
+// Logo img file
 if ($this->params->get('logoFile'))
 {
-	$logo = '<img src="' . JUri::root() . $this->params->get('logoFile') . '" alt="' . $sitename . '" />';
-}
-elseif ($this->params->get('sitetitle'))
-{
-	$logo = '<span class="site-title" title="' . $sitename . '">' . htmlspecialchars($this->params->get('sitetitle'), ENT_COMPAT, 'UTF-8') . '</span>';
+	$logoImg = '<img src="' . JUri::root() . $this->params->get('logoFile') . '" alt="' . $sitename . '" />';
 }
 else
 {
-	$logo = '<span class="site-title" title="' . $sitename . '">' . $sitename . '</span>';
+	$logoImg = '<img src="' . $this->baseurl . '/templates/' . $this->template . '/images/logoImg.png' . '" alt="' . $sitename . '" />';
 }
+
+// Site title param
+if ($this->params->get('sitetitle'))
+{
+	$siteTitle = '<span class="site-title" title="' . $sitename . '">' . htmlspecialchars($this->params->get('sitetitle'), ENT_COMPAT, 'UTF-8') . '</span>';
+}
+else
+{
+	$siteTitle = '<span class="site-title" title="' . $sitename . '">' . $sitename . '</span>';
+}
+
+// Site description param
+if ($this->params->get('sitedescription'))
+{
+	$siteDescription = '<div class="site-description">' . htmlspecialchars($this->params->get('sitedescription'), ENT_COMPAT, 'UTF-8') . '</div>';
+}
+else
+{
+	$siteDescription = '<div class="site-description">Статьи про ОС Ubuntu. Языки программирования Си&nbsp;и&nbsp;C++<br>Инструменты разработки и многое другое.</div>';
+}
+
+
 ?>
 <!DOCTYPE html>
 <html lang="<?php echo $this->language; ?>" dir="<?php echo $this->direction; ?>">
@@ -133,20 +151,31 @@ else
 	<!-- Body -->
 	<div class="body">
 		<div class="container">
-			<!-- Header -->
-			<header class="header" role="banner">
-				<div class="header-inner clearfix">
-					<a class="brand pull-left" href="<?php echo $this->baseurl; ?>/">
-						<?php echo $logo; ?>
-						<?php if ($this->params->get('sitedescription')) : ?>
-							<?php echo '<div class="site-description">' . htmlspecialchars($this->params->get('sitedescription'), ENT_COMPAT, 'UTF-8') . '</div>'; ?>
-						<?php endif; ?>
-					</a>
-					<div class="header-search pull-right">
-						<jdoc:include type="modules" name="position-0" style="none" />
+			<div class="row">
+				<!-- Header -->
+				<header class="header" role="banner">
+					<div class="col-xl-9 col-lg-9">
+						<div class="row md-outer">
+							<div class="col-xl-3 col-lg-3 col-md-3 hidden-sm-down md-inner">
+								<a class="brand pull-left" href="<?php echo $this->baseurl; ?>/">
+									<?php echo $logoImg; ?>
+								</a>
+							</div>
+							<div class="col-xl-9 col-lg-9 col-md-9 col-sm-12 col-xs-12">
+								<a class="brand pull-left" href="<?php echo $this->baseurl; ?>/">
+									<p class="h1"><?php echo $siteTitle; ?> <sup class="tag tag-warning" style="font-size: 1rem; top: -1rem;">В разработке</sup></p>
+								</a>
+								<?php echo $siteDescription; ?>
+							</div>
+						</div>
 					</div>
-				</div>
-			</header>
+				</header>
+			</div>
+
+
+		<div class="header-search pull-right">
+			<jdoc:include type="modules" name="position-0" style="none" />
+		</div>
 			<?php if ($this->countModules('position-1')) : ?>
 				<nav class="navigation" role="navigation">
 					<div class="navbar pull-left">
