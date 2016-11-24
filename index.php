@@ -221,7 +221,7 @@ else
 				</a>
 			</p>
 			<p>
-				&copy; <?php echo date('Y'); ?> <?php echo $sitename; ?>
+				Copyright (&copy;) <?php echo date('Y'); ?> <?php echo $sitename; ?>, <?php echo JText::_('TPL_B4BLOG_COPYRIGHT'); ?>
 			</p>
 		</div>
 	</footer>
