@@ -26,17 +26,17 @@ else
 }
 ?>
 <div class="search<?php echo $moduleclass_sfx ?>">
-	<form action="<?php echo JRoute::_('index.php');?>" method="post" class="form-inline">
+	<form action="<?php echo JRoute::_('index.php');?>" method="post" class="form-inline float-md-right">
 		<?php
-			$output = '<label for="mod-search-searchword" class="element-invisible">' . $label . '</label> ';
-			$output .= '<input name="searchword" id="mod-search-searchword" maxlength="' . $maxlength . '"  class="inputbox search-query" type="search"' . $width;
+			//$output = '<label for="mod-search-searchword" class="element-invisible">' . $label . '</label> ';
+			$output .= '<input name="searchword" id="mod-search-searchword" maxlength="' . $maxlength . '"  class="form-control inputbox search-query" type="search"' . $width;
 			$output .= ' placeholder="' . $text . '" />';
 
 			if ($button) :
 				if ($imagebutton) :
 					$btn_output = ' <input type="image" alt="' . $button_text . '" class="button" src="' . $img . '" onclick="this.form.searchword.focus();"/>';
 				else :
-					$btn_output = ' <button class="button btn btn-primary" onclick="this.form.searchword.focus();">' . $button_text . '</button>';
+					$btn_output = ' <button class="btn btn-outline-primary" onclick="this.form.searchword.focus();">' . $button_text . '</button>';
 				endif;
 
 				switch ($button_pos) :
