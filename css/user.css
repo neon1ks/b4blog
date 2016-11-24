@@ -43,7 +43,7 @@ ul.inline > li, ol.inline > li {
 
 .form-signin {
   max-width: 330px;
-  padding: 5px 15px 0 15px;
+  padding: 0 15px;
 }
 
 .form-signin .form-signin-heading,
