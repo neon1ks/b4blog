@@ -96,11 +96,11 @@ else
 // Logo img file
 if ($this->params->get('logoFile'))
 {
-	$logoImg = '<img src="' . JUri::root() . $this->params->get('logoFile') . '" alt="' . $sitename . '" />';
+	$logoImg = '<img src="' . JUri::root() . $this->params->get('logoFile') . '" alt="' . $sitename . '" class="imgCenter" />';
 }
 else
 {
-	$logoImg = '<img src="' . $this->baseurl . '/templates/' . $this->template . '/images/logoImg.png' . '" alt="' . $sitename . '" />';
+	$logoImg = '<img src="' . $this->baseurl . '/templates/' . $this->template . '/images/logoImg.png' . '" alt="' . $sitename . '" class="imgCenter" />';
 }
 
 // Site title param
@@ -213,6 +213,7 @@ else
 	<footer class="footer" role="contentinfo">
 		<div class="container">
 			<hr />
+			<div class="blog-footer">
 			<jdoc:include type="modules" name="footer" style="none" />
 			<p class="pull-right">
 				<a href="#" id="back-top">
@@ -222,6 +223,7 @@ else
 			<p>
 				Copyright &copy; <?php echo date('Y'); ?> <?php echo $sitename; ?>, <?php echo JText::_('TPL_B4BLOG_COPYRIGHT'); ?>
 			</p>
+			</div>
 		</div>
 	</footer>
 	<jdoc:include type="modules" name="debug" style="none" />

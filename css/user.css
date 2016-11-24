@@ -3,7 +3,7 @@
 	margin-bottom: 2rem;
 }
 .site-name {
-	margin-top: 1.25rem;
+	margin-top: 15px;
 }
 .breadcrumb-label {
 	float: left;
@@ -16,6 +16,10 @@
 }
 .blog-inner {
 	margin: auto auto;
+}
+img.imgCenter {
+	display:block;
+	margin:0 auto;
 }
 .readmore {
 	text-align: right;
@@ -39,8 +43,7 @@ ul.inline > li, ol.inline > li {
 
 .form-signin {
   max-width: 330px;
-  padding: 0 15px 0 15px;
-  margin: 0 auto;
+  padding: 5px 15px 0 15px;
 }
 
 .form-signin .form-signin-heading,
@@ -72,8 +75,9 @@ ul.inline > li, ol.inline > li {
   border-top-right-radius: 0;
 }
 
-.footer {
-	padding: 2rem 0;
+.blog-footer {
+	padding-top: 1rem;
+	padding-bottom: 2rem;
 }
 
 ul.mostread {
@@ -83,8 +87,19 @@ ul.mostread {
 
 .well .page-header {
 	padding-left: 15px;
-	padding-bottom: 0.5rem;
 }
 .well {
 	margin-bottom: 2rem;
+}
+
+.form-vertical {
+	padding: 0 15px 0 15px;
+}
+
+.login-greeting {
+	margin-bottom: 0.5rem;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    margin-bottom: 1rem;
 }
