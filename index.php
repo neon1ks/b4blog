@@ -37,13 +37,11 @@ else
 	$fullWidth = 0;
 }
 
-// Add JavaScript Frameworks
-JHtml::_('bootstrap.framework');
-
-$doc->addScriptVersion($this->baseurl . '/templates/' . $this->template . '/js/template.js');
+// Add JavaScript
+$doc->addScriptVersion($this->baseurl . '/templates/' . $this->template . '/js/bootstrap.js');
 
 // Add Stylesheets
-$doc->addStyleSheetVersion($this->baseurl . '/templates/' . $this->template . '/css/template.css');
+$doc->addStyleSheetVersion($this->baseurl . '/templates/' . $this->template . '/css/bootstrap.css');
 
 // Use of Google Font
 if ($this->params->get('googleFont'))
@@ -86,9 +84,6 @@ if (file_exists($userCss) && filesize($userCss) > 0)
 	$this->addStyleSheetVersion($this->baseurl . '/templates/' . $this->template . '/css/user.css');
 }
 
-// Load optional RTL Bootstrap CSS
-JHtml::_('bootstrap.loadCss', false, $this->direction);
-
 // Adjusting content width
 if ($this->countModules('position-7') && $this->countModules('position-8'))
 {
@@ -124,9 +119,9 @@ else
 <!DOCTYPE html>
 <html lang="<?php echo $this->language; ?>" dir="<?php echo $this->direction; ?>">
 <head>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<jdoc:include type="head" />
-	<!--[if lt IE 9]><script src="<?php echo JUri::root(true); ?>/media/jui/js/html5.js"></script><![endif]-->
 </head>
 <body class="site <?php echo $option
 	. ' view-' . $view
