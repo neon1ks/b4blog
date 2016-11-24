@@ -38,7 +38,10 @@ else
 }
 
 // Add JavaScript
-$doc->addScriptVersion($this->baseurl . '/templates/' . $this->template . '/js/bootstrap.js');
+// jQuery first, then Tether, then Bootstrap JS.
+$doc->addScriptVersion($this->baseurl . '/templates/' . $this->template . '/js/jquery-3.1.1.js');
+$doc->addScriptVersion($this->baseurl . '/templates/' . $this->template . '/js/tether-1.3.7.js');
+$doc->addScriptVersion($this->baseurl . '/templates/' . $this->template . '/js/bootstrap-4.0.0-alpha.5.js');
 
 // Add Stylesheets
 $doc->addStyleSheetVersion($this->baseurl . '/templates/' . $this->template . '/css/bootstrap.css');
