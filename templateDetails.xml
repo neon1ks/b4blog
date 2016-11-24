@@ -54,7 +54,7 @@
 					label="TPL_B4BLOG_COLOR_LABEL"
 					description="TPL_B4BLOG_COLOR_DESC" />
 
-				<field name="templateBackgroundColor" class="" type="color" default="#F4F6F7"
+				<field name="templateBackgroundColor" class="" type="color" default="#FFFFFF"
 					label="TPL_B4BLOG_BACKGROUND_COLOR_LABEL"
 					description="TPL_B4BLOG_BACKGROUND_COLOR_DESC" />
 
