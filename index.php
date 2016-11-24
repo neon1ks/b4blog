@@ -147,8 +147,8 @@ else
 				<!-- Header -->
 				<header class="header" role="banner">
 					<div class="col-xl-9 col-lg-9">
-						<div class="row md-outer">
-							<div class="col-xl-3 col-lg-3 col-md-3 hidden-sm-down md-inner">
+						<div class="row blog-outer">
+							<div class="col-xl-3 col-lg-3 col-md-3 hidden-sm-down blog-inner">
 								<a class="brand pull-left" href="<?php echo $this->baseurl; ?>/">
 									<?php echo $logoImg; ?>
 								</a>

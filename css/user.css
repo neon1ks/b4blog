@@ -2,5 +2,11 @@
 	float: left;
 }
 .pull-right {
-    float: right;
+	float: right;
+}
+.blog-outer {
+	display: flex;
+}
+.blog-inner {
+	margin: auto auto;
 }
