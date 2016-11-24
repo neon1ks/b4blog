@@ -87,17 +87,6 @@
 					label="TPL_B4BLOG_FONT_NAME_LABEL"
 					description="TPL_B4BLOG_FONT_NAME_DESC" 
 					showon="googleFont:1" />
-
-				<field name="fluidContainer"
-					type="radio"
-					class="btn-group btn-group-yesno"
-					default="0"
-					label="TPL_B4BLOG_FLUID_LABEL"
-					description="TPL_B4BLOG_FLUID_DESC"
-				>
-					<option value="1">TPL_B4BLOG_FLUID</option>
-					<option value="0">TPL_B4BLOG_STATIC</option>
-				</field>
 			</fieldset>
 		</fields>
 	</config>
