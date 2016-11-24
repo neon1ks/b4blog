@@ -36,7 +36,7 @@ else
 				if ($imagebutton) :
 					$btn_output = ' <input type="image" alt="' . $button_text . '" class="button" src="' . $img . '" onclick="this.form.searchword.focus();"/>';
 				else :
-					$btn_output = ' <button class="btn btn-outline-primary" onclick="this.form.searchword.focus();">' . $button_text . '</button>';
+					$btn_output = ' <button class="btn btn-outline-primary btn-search" onclick="this.form.searchword.focus();">' . $button_text . '</button>';
 				endif;
 
 				switch ($button_pos) :
