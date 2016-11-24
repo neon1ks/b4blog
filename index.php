@@ -37,13 +37,14 @@ else
 	$fullWidth = 0;
 }
 
-// Add JavaScript Frameworks
-JHtml::_('bootstrap.framework');
-
-$doc->addScriptVersion($this->baseurl . '/templates/' . $this->template . '/js/template.js');
+// Add JavaScript
+// jQuery first, then Tether, then Bootstrap JS.
+$doc->addScriptVersion($this->baseurl . '/templates/' . $this->template . '/js/jquery-3.1.1.js');
+$doc->addScriptVersion($this->baseurl . '/templates/' . $this->template . '/js/tether-1.3.7.js');
+$doc->addScriptVersion($this->baseurl . '/templates/' . $this->template . '/js/bootstrap-4.0.0-alpha.5.js');
 
 // Add Stylesheets
-$doc->addStyleSheetVersion($this->baseurl . '/templates/' . $this->template . '/css/template.css');
+$doc->addStyleSheetVersion($this->baseurl . '/templates/' . $this->template . '/css/bootstrap.css');
 
 // Use of Google Font
 if ($this->params->get('googleFont'))
@@ -60,7 +61,6 @@ if ($this->params->get('templateColor'))
 {
 	$doc->addStyleDeclaration("
 	body.site {
-		border-top: 3px solid " . $this->params->get('templateColor') . ";
 		background-color: " . $this->params->get('templateBackgroundColor') . ";
 	}
 	a {
@@ -86,108 +86,122 @@ if (file_exists($userCss) && filesize($userCss) > 0)
 	$this->addStyleSheetVersion($this->baseurl . '/templates/' . $this->template . '/css/user.css');
 }
 
-// Load optional RTL Bootstrap CSS
-JHtml::_('bootstrap.loadCss', false, $this->direction);
-
 // Adjusting content width
-if ($this->countModules('position-7') && $this->countModules('position-8'))
+if ($this->countModules('position-7'))
 {
-	$span = "span6";
-}
-elseif ($this->countModules('position-7') && !$this->countModules('position-8'))
-{
-	$span = "span9";
-}
-elseif (!$this->countModules('position-7') && $this->countModules('position-8'))
-{
-	$span = "span9";
+	$classMainWidth = 'col-xl-9 col-lg-9';
 }
 else
 {
-	$span = "span12";
+	$classMainWidth = 'col-xl-12 col-lg-12';
 }
 
-// Logo file or site title param
+// Logo img file
 if ($this->params->get('logoFile'))
 {
-	$logo = '<img src="' . JUri::root() . $this->params->get('logoFile') . '" alt="' . $sitename . '" />';
-}
-elseif ($this->params->get('sitetitle'))
-{
-	$logo = '<span class="site-title" title="' . $sitename . '">' . htmlspecialchars($this->params->get('sitetitle'), ENT_COMPAT, 'UTF-8') . '</span>';
+	$logoImg = '<img src="' . JUri::root() . $this->params->get('logoFile') . '" alt="' . $sitename . '" class="imgCenter" />';
 }
 else
 {
-	$logo = '<span class="site-title" title="' . $sitename . '">' . $sitename . '</span>';
+	$logoImg = '<img src="' . $this->baseurl . '/templates/' . $this->template . '/images/logoImg.png' . '" alt="' . $sitename . '" class="imgCenter" />';
 }
+
+// Site title param
+if ($this->params->get('sitetitle'))
+{
+	$siteTitle = '<span class="site-title" title="' . $sitename . '">' . htmlspecialchars($this->params->get('sitetitle'), ENT_COMPAT, 'UTF-8') . '</span>';
+}
+else
+{
+	$siteTitle = '<span class="site-title" title="' . $sitename . '">' . $sitename . '</span>';
+}
+
+// Site description param
+if ($this->params->get('sitedescription'))
+{
+	$siteDescription = '<div class="site-description">' . htmlspecialchars($this->params->get('sitedescription'), ENT_COMPAT, 'UTF-8') . '</div>';
+}
+else
+{
+	$siteDescription = '<div class="site-description">Статьи про Ubuntu. Языки программирования Си&nbsp;и&nbsp;C++<br>Инструменты разработки и многое другое.</div>';
+}
+
+
 ?>
 <!DOCTYPE html>
 <html lang="<?php echo $this->language; ?>" dir="<?php echo $this->direction; ?>">
 <head>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<jdoc:include type="head" />
-	<!--[if lt IE 9]><script src="<?php echo JUri::root(true); ?>/media/jui/js/html5.js"></script><![endif]-->
 </head>
 <body class="site <?php echo $option
 	. ' view-' . $view
 	. ($layout ? ' layout-' . $layout : ' no-layout')
 	. ($task ? ' task-' . $task : ' no-task')
-	. ($itemid ? ' itemid-' . $itemid : '')
-	. ($params->get('fluidContainer') ? ' fluid' : '');
+	. ($itemid ? ' itemid-' . $itemid : '');
 	echo ($this->direction == 'rtl' ? ' rtl' : '');
 ?>">
 	<!-- Body -->
 	<div class="body">
-		<div class="container<?php echo ($params->get('fluidContainer') ? '-fluid' : ''); ?>">
-			<!-- Header -->
-			<header class="header" role="banner">
-				<div class="header-inner clearfix">
-					<a class="brand pull-left" href="<?php echo $this->baseurl; ?>/">
-						<?php echo $logo; ?>
-						<?php if ($this->params->get('sitedescription')) : ?>
-							<?php echo '<div class="site-description">' . htmlspecialchars($this->params->get('sitedescription'), ENT_COMPAT, 'UTF-8') . '</div>'; ?>
-						<?php endif; ?>
-					</a>
-					<div class="header-search pull-right">
-						<jdoc:include type="modules" name="position-0" style="none" />
-					</div>
-				</div>
-			</header>
-			<?php if ($this->countModules('position-1')) : ?>
-				<nav class="navigation" role="navigation">
-					<div class="navbar pull-left">
-						<a class="btn btn-navbar collapsed" data-toggle="collapse" data-target=".nav-collapse">
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-						</a>
-					</div>
-					<div class="nav-collapse">
-						<jdoc:include type="modules" name="position-1" style="none" />
-					</div>
-				</nav>
-			<?php endif; ?>
-			<jdoc:include type="modules" name="banner" style="xhtml" />
-			<div class="row-fluid">
-				<?php if ($this->countModules('position-8')) : ?>
-					<!-- Begin Sidebar -->
-					<div id="sidebar" class="span3">
-						<div class="sidebar-nav">
-							<jdoc:include type="modules" name="position-8" style="xhtml" />
+		<div class="container">
+			<div class="row">
+				<!-- Header -->
+				<header class="header" role="banner">
+					<div class="col-xl-9 col-lg-9">
+						<div class="row blog-outer">
+							<div class="col-xl-3 col-lg-3 col-md-3 hidden-sm-down blog-inner">
+								<a class="brand pull-left" href="<?php echo $this->baseurl; ?>/">
+									<?php echo $logoImg; ?>
+								</a>
+							</div>
+							<div class="col-xl-9 col-lg-9 col-md-9 col-sm-12 col-xs-12">
+								<a class="brand pull-left" href="<?php echo $this->baseurl; ?>/">
+									<p class="h1 site-name"><?php echo $siteTitle; ?> <sup class="tag tag-warning" style="font-size: 1rem; top: -1rem;">В разработке</sup></p>
+								</a>
+								<?php echo $siteDescription; ?>
+							</div>
 						</div>
 					</div>
-					<!-- End Sidebar -->
-				<?php endif; ?>
-				<main id="content" role="main" class="<?php echo $span; ?>">
-					<!-- Begin Content -->
-					<jdoc:include type="modules" name="position-3" style="xhtml" />
-					<jdoc:include type="message" />
-					<jdoc:include type="component" />
-					<jdoc:include type="modules" name="position-2" style="none" />
-					<!-- End Content -->
-				</main>
+				</header>
+			</div>
+		</div>
+
+
+		<?php if ($this->countModules('position-1')) : ?>
+		<nav class="navbar navbar-light bg-faded">
+			<div class="container">
+				<button class="navbar-toggler hidden-md-up" type="button" data-toggle="collapse"
+					data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+				</button>
+				<div class="collapse navbar-toggleable-sm" id="navbarResponsive">
+					<jdoc:include type="modules" name="position-1" style="none" />
+					<?php if ($this->countModules('position-0')) : ?>
+						<jdoc:include type="modules" name="position-0" style="none" />
+					<?php endif; ?>
+				</div>
+			</div>
+		</nav>
+		<?php endif; ?>
+
+		<div class="container md-center">
+			<div class="row">
+				<jdoc:include type="modules" name="banner" style="xhtml" />
+			</div>
+			<div class="row">
+		
+				<div class="<?php echo $classMainWidth; ?>">
+					<main id="content" role="main" class="<?php echo $span; ?>">
+						<!-- Begin Content -->
+						<jdoc:include type="modules" name="position-3" style="xhtml" />
+						<jdoc:include type="message" />
+						<jdoc:include type="component" />
+						<jdoc:include type="modules" name="position-2" style="none" />
+						<!-- End Content -->
+					</main>
+				</div>
 				<?php if ($this->countModules('position-7')) : ?>
-					<div id="aside" class="span3">
+					<div class="col-xl-3 col-lg-3">
 						<!-- Begin Right Sidebar -->
 						<jdoc:include type="modules" name="position-7" style="well" />
 						<!-- End Right Sidebar -->
@@ -196,10 +210,13 @@ else
 			</div>
 		</div>
 	</div>
+
+
 	<!-- Footer -->
 	<footer class="footer" role="contentinfo">
-		<div class="container<?php echo ($params->get('fluidContainer') ? '-fluid' : ''); ?>">
+		<div class="container">
 			<hr />
+			<div class="blog-footer">
 			<jdoc:include type="modules" name="footer" style="none" />
 			<p class="pull-right">
 				<a href="#" id="back-top">
@@ -207,8 +224,9 @@ else
 				</a>
 			</p>
 			<p>
-				&copy; <?php echo date('Y'); ?> <?php echo $sitename; ?>
+				Copyright &copy; <?php echo date('Y'); ?> <?php echo $sitename; ?>, <?php echo JText::_('TPL_B4BLOG_COPYRIGHT'); ?>
 			</p>
+			</div>
 		</div>
 	</footer>
 	<jdoc:include type="modules" name="debug" style="none" />

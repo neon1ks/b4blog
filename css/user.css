@@ -1,0 +1,119 @@
+.body {
+	margin-top: 1rem;
+}
+.navbar {
+	border-radius: 0;
+	margin-bottom: 2rem;
+	margin-top: 1rem;
+}
+.site-name {
+	margin-top: 15px;
+}
+.breadcrumb-label {
+	float: left;
+}
+.pull-right {
+	float: right;
+}
+.blog-outer {
+	display: flex;
+}
+.blog-inner {
+	margin: auto auto;
+}
+img.imgCenter {
+	display:block;
+	margin:0 auto;
+}
+.readmore {
+	text-align: right;
+}
+ul.inline > li, ol.inline > li {
+	display: inline-block;
+	padding-left: 0;
+	padding-right: 5px;
+}
+.tags {
+	padding-left: 0;
+}
+.article-info {
+	font-size: 90%;
+}
+
+.article-info dd {
+	margin-bottom: 0;
+	margin-left: 0;
+}
+
+.form-signin {
+  max-width: 330px;
+  padding: 0 15px;
+}
+
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+  margin-bottom: 10px;
+}
+.form-signin .checkbox {
+  font-weight: normal;
+}
+.form-signin .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="text"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.blog-footer {
+	padding-top: 1rem;
+	padding-bottom: 2rem;
+}
+
+ul.mostread {
+	padding: 0 0 0 15px;
+	margin: 0 0 0.5rem 1.2rem;
+}
+
+.well .page-header {
+	padding-left: 15px;
+}
+.well {
+	margin-bottom: 2rem;
+}
+
+.form-vertical {
+	padding: 0 15px 0 15px;
+}
+
+.login-greeting {
+	margin-bottom: 0.5rem;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    margin-bottom: 1rem;
+}
+
+.btn-search {
+	margin-top: 1rem;
+}
+  
+@media (min-width: 576px) {
+  .btn-search {
+    margin-top: 0;
+  }
+}
