@@ -10,6 +10,7 @@
 defined('_JEXEC') or die;
 
 $attributes = array();
+$attributes['class'] = 'nav-link ';
 
 if ($item->anchor_title)
 {
@@ -18,7 +19,7 @@ if ($item->anchor_title)
 
 if ($item->anchor_css)
 {
-	$attributes['class'] = $item->anchor_css;
+	$attributes['class'] .= $item->anchor_css;
 }
 
 if ($item->anchor_rel)
