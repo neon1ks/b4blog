@@ -123,6 +123,13 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     margin-right: 0.5rem;
 }
 .blog-article-info {
-	margin-bottom: 0.5rem;
 	color: #676767;
+}
+
+div[class^=leading] {
+	margin-top: 2rem;
+}
+
+.leading-0 {
+	margin-top: 0 !important;
 }
