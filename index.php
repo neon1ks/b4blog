@@ -46,6 +46,11 @@ $doc->addScriptVersion($this->baseurl . '/templates/' . $this->template . '/js/b
 // Add Stylesheets
 $doc->addStyleSheetVersion($this->baseurl . '/templates/' . $this->template . '/css/bootstrap.css');
 
+// подключение стиля разметки кода
+$doc->addStyleSheet('https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/default.min.css');
+$doc->addScript('https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js');
+$doc->addScriptDeclaration('hljs.initHighlightingOnLoad();');
+
 // Use of Google Font
 if ($this->params->get('googleFont'))
 {
