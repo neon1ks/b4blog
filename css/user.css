@@ -118,9 +118,10 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   }
 }
 
-.blog-article-info .blog-published {
-	float: left;
-	padding-right: 0.5rem;
+
+.blog-article-info .list-inline-item:not(:last-child) {
+    margin-right: 0.5rem;
 }
-
-
+.blog-article-info {
+	margin-bottom: 0.5rem;
+}
