@@ -45,6 +45,7 @@ $doc->addScriptVersion($this->baseurl . '/templates/' . $this->template . '/js/b
 
 // Add Stylesheets
 $doc->addStyleSheetVersion($this->baseurl . '/templates/' . $this->template . '/css/bootstrap.css');
+$doc->addStyleSheetVersion($this->baseurl . '/templates/' . $this->template . '/css/font-awesome.css');
 
 // подключение стиля разметки кода
 $doc->addStyleSheet('https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/default.min.css');
