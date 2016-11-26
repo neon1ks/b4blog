@@ -157,12 +157,12 @@ else
 					<div class="col-xl-9 col-lg-9">
 						<div class="row blog-outer">
 							<div class="col-xl-3 col-lg-3 col-md-3 hidden-sm-down blog-inner">
-								<a class="brand pull-left" href="<?php echo $this->baseurl; ?>/">
+								<a class="brand" href="<?php echo $this->baseurl; ?>/">
 									<?php echo $logoImg; ?>
 								</a>
 							</div>
 							<div class="col-xl-9 col-lg-9 col-md-9 col-sm-12 col-xs-12">
-								<a class="brand pull-left" href="<?php echo $this->baseurl; ?>/">
+								<a class="brand" href="<?php echo $this->baseurl; ?>/">
 									<p class="h1 site-name"><?php echo $siteTitle; ?> <sup class="tag tag-warning" style="font-size: 1rem; top: -1rem;">В разработке</sup></p>
 								</a>
 								<?php echo $siteDescription; ?>
