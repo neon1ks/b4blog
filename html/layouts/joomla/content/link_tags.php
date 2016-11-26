@@ -25,7 +25,7 @@ endforeach;
 
 <?php if (!empty($displayData)) : ?>
 	<ul class="tags inline">
-		<i class="fa fa-tag" aria-hidden="true"></i>
+		<i class="fa fa-tag fa-fw" aria-hidden="true"></i>
 		<?php foreach ($displayData as $i => $tag) : ?>
 			<?php if (in_array($tag->access, JAccess::getAuthorisedViewLevels(JFactory::getUser()->get('id')))) : ?>
 				<?php $iTag++ ?>

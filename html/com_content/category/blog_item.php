@@ -31,7 +31,7 @@ $info    = $params->get('info_block_position', 0);
 		<ul class="list-inline blog-article-info">
 			<?php if ($params->get('show_publish_date')) : ?>
 			<li class="list-inline-item">
-				<i class="fa fa-calendar" aria-hidden="true"></i>
+				<i class="fa fa-calendar fa-fw" aria-hidden="true"></i>
 				<time datetime="<?php echo JHtml::_('date', $this->item->publish_up, 'c'); ?>" itemprop="datePublished">
 				<?php echo JText::sprintf(JHtml::_('date', $this->item->publish_up, JText::_('DATE_FORMAT_LC3'))); ?></time>
 			</li>
