@@ -133,7 +133,3 @@ div[class^=leading] {
 .leading-0 {
 	margin-top: 0 !important;
 }
-
-.fa-calendar, .fa-tag {
-	padding-right: 2px;
-}
