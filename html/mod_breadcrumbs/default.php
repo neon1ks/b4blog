@@ -46,25 +46,10 @@ JHtml::_('bootstrap.tooltip');
 	foreach ($list as $key => $item) :
 		if ($key != $last_item_key) :
 			// Render all but last item - along with separator ?>
-			<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" class="breadcrumb-item">
-				<?php if (!empty($item->link)) : ?>
-					<a itemprop="item" href="<?php echo $item->link; ?>" class="pathway"><span itemprop="name"><?php echo $item->name; ?></span></a>
-				<?php else : ?>
-					<span itemprop="name">
-						<?php echo $item->name; ?>
-					</span>
-				<?php endif; ?>
-
-				<meta itemprop="position" content="<?php echo $key + 1; ?>">
-			</li>
+			<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" class="breadcrumb-item"><?php if (!empty($item->link)) : ?><a itemprop="item" href="<?php echo $item->link; ?>" class="pathway"><span itemprop="name"><?php echo $item->name; ?></span></a><?php else : ?><span itemprop="name"><?php echo $item->name; ?></span><?php endif; ?><meta itemprop="position" content="<?php echo $key + 1; ?>"></li>
 		<?php elseif ($show_last) :
 			// Render last item if reqd. ?>
-			<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" class="breadcrumb-item active">
-				<span itemprop="name">
-					<?php echo $item->name; ?>
-				</span>
-				<meta itemprop="position" content="<?php echo $key + 1; ?>">
-			</li>
+			<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" class="breadcrumb-item active"><span itemprop="name"><?php echo $item->name; ?></span><meta itemprop="position" content="<?php echo $key + 1; ?>"></li>
 		<?php endif;
 	endforeach; ?>
 </ol>
