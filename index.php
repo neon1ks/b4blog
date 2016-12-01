@@ -105,11 +105,11 @@ else
 // Logo img file
 if ($this->params->get('logoFile'))
 {
-	$logoImg = '<img src="' . JUri::root() . $this->params->get('logoFile') . '" alt="' . $sitename . '" class="imgCenter" />';
+	$logoImg = '<img src="' . JUri::root() . $this->params->get('logoFile') . '" alt="' . $sitename . '" width="150px" />';
 }
 else
 {
-	$logoImg = '<img src="' . $this->baseurl . '/templates/' . $this->template . '/images/logoImg.png' . '" alt="' . $sitename . '" class="imgCenter" />';
+	$logoImg = '<img src="' . $this->baseurl . '/templates/' . $this->template . '/images/logoImg.png' . '" alt="' . $sitename . '" width="150px" />';
 }
 
 // Site title param
@@ -155,8 +155,8 @@ else
 				<!-- Header -->
 				<header class="header" role="banner">
 					<div class="col-xl-9 col-lg-9">
-						<div class="row blog-outer">
-							<div class="col-xl-3 col-lg-3 col-md-3 hidden-sm-down blog-inner">
+						<div class="row">
+							<div class="intro-image-block hidden-sm-down">
 								<a class="brand" href="<?php echo $this->baseurl; ?>/">
 									<?php echo $logoImg; ?>
 								</a>

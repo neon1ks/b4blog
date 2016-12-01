@@ -20,14 +20,15 @@ $info    = $params->get('info_block_position', 0);
 	<div class="system-unpublished">
 <?php endif; ?>
 
-<?php echo JLayoutHelper::render('joomla.content.blog_style_default_item_title', $this->item); ?>
 
-<div class="row blog-outer">
-	<div class="col-xl-3 col-lg-3 col-md-3 hidden-sm-down blog-inner">
+<div class="row">
+	<div class="intro-image-block hidden-sm-down">
 		<?php echo JLayoutHelper::render('joomla.content.intro_image', $this->item); ?>
 	</div>
-	<div class="col-xl-9 col-lg-9 col-md-9 col-sm-12 col-xs-12 blog-inner">
+	<div class="col-xl-9 col-lg-9 col-md-9 col-sm-12 col-xs-12">
 
+		<?php echo JLayoutHelper::render('joomla.content.blog_style_default_item_title', $this->item); ?>
+		
 		<ul class="list-inline blog-article-info">
 			<?php if ($params->get('show_publish_date')) : ?>
 			<li class="list-inline-item">

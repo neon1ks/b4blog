@@ -15,16 +15,6 @@
 .pull-right {
 	float: right;
 }
-.blog-outer {
-	display: flex;
-}
-.blog-inner {
-	margin: auto auto;
-}
-img.imgCenter {
-	display:block;
-	margin:0 auto;
-}
 .readmore {
 	text-align: right;
 }
@@ -108,6 +98,25 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     margin-bottom: 1rem;
 }
 
+
+h1, .h1 {
+	font-size: 35.75px;
+}
+
+h2, .h2 {
+	font-size: 26px;
+	line-height: 28px;
+}
+h3, .h3 {
+	font-size: 22px;
+	line-height: 24px;
+}
+h4, .h4 {
+	font-size: 18px;
+	line-height: 20px;
+}
+
+
 .btn-search {
 	margin-top: 1rem;
 }
@@ -132,4 +141,14 @@ div[class^=leading] {
 
 .leading-0 {
 	margin-top: 0 !important;
+}
+
+@media (min-width: 768px) {
+	.intro-image-block {
+		position: relative;
+		float: left;
+		width: 180px;
+		padding-right: 15px;
+		padding-left: 15px;
+	}
 }
