@@ -151,4 +151,21 @@ div[class^=leading] {
 		padding-right: 15px;
 		padding-left: 15px;
 	}
+	.intro-article-block {
+		position: relative;
+		float: left;
+		width: 540px;
+		padding-right: 15px;
+		padding-left: 15px;
+	}
+}
+
+@media (min-width: 1200px) {
+	.intro-article-block {
+		position: relative;
+		float: left;
+		width: 675px;
+		padding-right: 15px;
+		padding-left: 15px;
+	}
 }

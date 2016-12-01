@@ -25,7 +25,7 @@ $info    = $params->get('info_block_position', 0);
 	<div class="intro-image-block hidden-sm-down">
 		<?php echo JLayoutHelper::render('joomla.content.intro_image', $this->item); ?>
 	</div>
-	<div class="col-xl-9 col-lg-9 col-md-9 col-sm-12 col-xs-12">
+	<div class="intro-article-block col-sm-12 col-xs-12">
 
 		<?php echo JLayoutHelper::render('joomla.content.blog_style_default_item_title', $this->item); ?>
 		
@@ -58,23 +58,25 @@ $info    = $params->get('info_block_position', 0);
 			<?php echo JLayoutHelper::render('joomla.content.info_block.block', array('item' => $this->item, 'params' => $params, 'position' => 'below')); ?>
 		<?php  endif; ?>
 
+
+		<?php if ($params->get('show_readmore') && $this->item->readmore) :
+			if ($params->get('access-view')) :
+				$link = JRoute::_(ContentHelperRoute::getArticleRoute($this->item->slug, $this->item->catid, $this->item->language));
+			else :
+				$menu = JFactory::getApplication()->getMenu();
+				$active = $menu->getActive();
+				$itemId = $active->id;
+				$link = new JUri(JRoute::_('index.php?option=com_users&view=login&Itemid=' . $itemId, false));
+				$link->setVar('return', base64_encode(ContentHelperRoute::getArticleRoute($this->item->slug, $this->item->catid, $this->item->language)));
+			endif; ?>
+
+			<?php echo JLayoutHelper::render('joomla.content.readmore', array('item' => $this->item, 'params' => $params, 'link' => $link)); ?>
+
+		<?php endif; ?>
+
 	</div>
 </div>
 
-<?php if ($params->get('show_readmore') && $this->item->readmore) :
-	if ($params->get('access-view')) :
-		$link = JRoute::_(ContentHelperRoute::getArticleRoute($this->item->slug, $this->item->catid, $this->item->language));
-	else :
-		$menu = JFactory::getApplication()->getMenu();
-		$active = $menu->getActive();
-		$itemId = $active->id;
-		$link = new JUri(JRoute::_('index.php?option=com_users&view=login&Itemid=' . $itemId, false));
-		$link->setVar('return', base64_encode(ContentHelperRoute::getArticleRoute($this->item->slug, $this->item->catid, $this->item->language)));
-	endif; ?>
-
-	<?php echo JLayoutHelper::render('joomla.content.readmore', array('item' => $this->item, 'params' => $params, 'link' => $link)); ?>
-
-<?php endif; ?>
 
 <?php if ($this->item->state == 0 || strtotime($this->item->publish_up) > strtotime(JFactory::getDate())
 	|| ((strtotime($this->item->publish_down) < strtotime(JFactory::getDate())) && $this->item->publish_down != JFactory::getDbo()->getNullDate())) : ?>
