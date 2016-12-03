@@ -2,7 +2,7 @@
 <!DOCTYPE install PUBLIC "-//Joomla! 2.5//DTD template 1.0//EN" "https://www.joomla.org/xml/dtd/2.5/template-install.dtd">
 <extension version="3.1" type="template" client="site">
 	<name>b4blog</name>
-	<version>0.21</version>
+	<version>0.23</version>
 	<creationDate>11/26/2016</creationDate>
 	<author>Maksim Demyanov</author>
 	<authorEmail>neon1ks@mail.ru</authorEmail>
